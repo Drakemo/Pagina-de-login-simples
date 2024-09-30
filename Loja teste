@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Estilo Instagram</title>
+    <style>
+body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #fafafa;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            width: 300px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .logo {
+            width: 60px;
+            height: 60px;
+            margin: 10px auto;
+            background: url('/logo.png') no-repeat center center;
+            background-size: contain;
+            animation: spin 6s linear;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #3897f0;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #2a7cbe;
+        }
+
+        .loading {
+            display: none;
+            margin-top: 20px;
+            font-size: 16px;
+            color: #333;
+        }
+        
+        </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo"></div>
+        <h2>Login</h2>
+        <input type="text" placeholder="Usuário" required>
+        <input type="password" placeholder="Senha" required>
+        <button onclick="loadPage()">Entrar</button>
+        <div class="loading" id="loading">Loading...</div>
+    </div>
+
+    <script>
+        function loadPage() {
+            const loadingText = document.getElementById('loading');
+            loadingText.style.display = 'block';
+            setTimeout(() => {
+                window.location.href = "pagina-principal.html"; // Substitua pela sua URL
+            }, 2000); // Tempo de animação
+        }
+    </script>
+</body>
+</html>
